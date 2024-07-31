@@ -803,8 +803,8 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
     description: Attribute.Text & Attribute.Required;
     body: Attribute.RichText;
-    slug: Attribute.UID<'api::article.article', 'title'>;
-    cover: Attribute.Media<'images'>;
+    slug: Attribute.UID<'api::article.article', 'title'> & Attribute.Required;
+    cover: Attribute.Media<'images'> & Attribute.Required;
     author: Attribute.Relation<
       'api::article.article',
       'manyToOne',
